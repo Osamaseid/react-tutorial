@@ -1,32 +1,41 @@
+import React, { useState } from "react"; // Import React and useState
 import MovieCard from "../components/MovieCard";
 
-function Home(){
-    const movie =[
-        {id: "1", title :"the matrix", released_date:"2025"},
-        {id: "1", title :"the matrix", released_date:"2025"},
-        {id: "1", title :"the matrix", released_date:"2025"}
+function Home() {
+    const [searchQuery, setSearchQuery] = useState("");
+    const movies = [ // Changed from 'movie' to 'movies' for clarity
+        { id: "1", title: "John Wick", released_date: "2025" },
+        { id: "2", title: "The Terminator", released_date: "2025" }, // Changed id to be unique
+        { id: "3", title: "The Matrix", released_date: "2025" } // Changed id to be unique
     ];
 
-    const handleSearch = () => {};
+    const handleSearch = (e) => { // Added 'e' parameter here
+        e.preventDefault(); // Prevent default form submission
+        alert(searchQuery);
+        setSearchQuery("");
+    };
 
-    return(
+    return (
         <div className="home">
-
-            <form onSubmit = {handleSearch} className="search-form">
+            <form onSubmit={handleSearch} className="search-form">
                 <input
-                type= "text"
-                placeholder="search for movies..."
-                className="search-input"/>
+                    type="text"
+                    placeholder="Search for movies..."
+                    className="search-input"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                />
                 <button type="submit" className="search-button">Search</button>
             </form>
-            <div className="home-grid">
-                {movie.map((movie) => (
-                    <MovieCard movie = {movie} key={movie.id} />
-                ))}
+            <div className="movies-grid">
+                {movies.map((movie) => 
+                    movie.title.toLowerCase().startsWith(searchQuery.toLowerCase()) && ( // Added case insensitivity 
+                        <MovieCard movie={movie} key={movie.id} />
+                    )
+                )}
             </div>
-    </div>
+        </div>
     );
-
 }
 
 export default Home;

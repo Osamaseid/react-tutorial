@@ -1,10 +1,12 @@
+import "../css/MovieCard.css";
+
 function MovieCard({movie}){
 
     function onFavoriteClick(){
         alter("favorite clicked")
     }
 
-    return<div className="movie-card">
+    return <div className="movie-card">
             <div className="movie-post">
                 <img src={movie.url} alt={movie.title}></img>
                 <div className="movie-overlay">

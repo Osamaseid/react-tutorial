@@ -1,13 +1,13 @@
-import './App.css';
-import Home from './pages/home';
+import './css/App.css';
+import Home from './pages/Home';
 import { Routes, Route } from 'react-router-dom';
-import Favorites from './pages/favorites';
-import Navbar from './components/navbar';
+import Favorites from './pages/Favorites';
+import NavBar from './components/navbar';
 
 function App() {
     return (
         <div>
-            <Navbar />
+            <NavBar />
         <main className='main-content'>
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -20,3 +20,5 @@ function App() {
 }
 
 export default App;
+
+

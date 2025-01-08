@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import '../css/Navbar.css';
 
-function Navbar(){
+function NavBar(){
     return <nav className="navbar">
-        <div className="navbar-logo">
+        <div className="navbar-brand">
           <link to="/">Movie-App</link>
         </div>
         <div className="navbar-links">
@@ -12,4 +13,4 @@ function Navbar(){
     </nav>
 }
 
-export default Navbar;
+export default NavBar;

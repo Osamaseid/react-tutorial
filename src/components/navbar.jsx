@@ -1,16 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import '../css/Navbar.css';
 
-function NavBar(){
-    return <nav className="navbar">
-        <div className="navbar-brand">
-          <link to="/">Movie-App</link>
-        </div>
-        <div className="navbar-links">
-            <link to="/" className="nav-links">Home</link>
-            <link to="/favorites" className="nav-links">Favorites</link>
-        </div>
-    </nav>
+function NavBar() {
+    return (
+        <nav className="navbar">
+            <div className="navbar-brand">
+                <Link to="/">Movie-App</Link> {/* Use Link instead of link */}
+            </div>
+            <div className="navbar-links">
+                <Link to="/" className="nav-links">Home</Link> {/* Use Link instead of link */}
+                <Link to="/favorites" className="nav-links">Favorites</Link> {/* Use Link instead of link */}
+            </div>
+        </nav>
+    );
 }
 
 export default NavBar;

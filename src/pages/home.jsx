@@ -1,6 +1,7 @@
 import React, { useState } from "react"; // Import React and useState
 import MovieCard from "../components/MovieCard";
 import "../css/Home.css"; // Import the CSS file
+import { getPopularMovies, searchMovies } from "../services/api"; // Import getPopularMovies and searchMovies from api.js
 
 function Home() {
     const [searchQuery, setSearchQuery] = useState("");
